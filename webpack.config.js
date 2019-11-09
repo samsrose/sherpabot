@@ -2,8 +2,8 @@ const path = require("path");
 
 const config = {
   entry: {
-    vendor: ["@babel/polyfill"],
-    app: ["./src/components/index.js"]
+    sherpabot: ["./src/sherpabot.js"],
+    app: ["./src/server.js"]
   },
   output: {
     path: path.resolve(__dirname, "public"),
