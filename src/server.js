@@ -1,12 +1,14 @@
 import compression from "compression";
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import express from 'express';
 import sherpabot from "./sherpabot";
 
+/*
 const result = dotenv.config({ path: './.env' });
 if (result.error) {
   throw result.error
 }
+*/
 
 sherpabot();
 
