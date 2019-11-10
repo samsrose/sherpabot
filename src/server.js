@@ -1,23 +1,31 @@
-import compression from "compression";
-// import dotenv from 'dotenv';
-import express from 'express';
-import sherpabot from "./sherpabot";
+'use strict';
+const dotenv = require('dotenv');
+const express = require('express');
+const path = require('path');
+const serverless = require('serverless-http');
+const app = express();
+const bodyParser = require('body-parser');
+const sherpabot = require("./sherpabot");
 
-/*
 const result = dotenv.config({ path: './.env' });
 if (result.error) {
   throw result.error
 }
-*/
 
 sherpabot();
 
-const app = express();
-
-app.use(compression());
-app.use(express.static("public"));
-
-const port = process.env.PORT || 5000;
-app.listen(port, function listenHandler() {
-  console.info(`Running on ${port}...`);
+const router = express.Router();
+router.get('/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
+  res.end();
 });
+router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
+router.post('/', (req, res) => res.json({ postBody: req.body }));
+
+app.use(bodyParser.json());
+app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+
+module.exports = app;
+module.exports.handler = serverless(app);

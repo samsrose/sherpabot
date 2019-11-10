@@ -1,6 +1,6 @@
-import Discord from 'discord.js';
+const Discord = require('discord.js');
 
-function sherpabot() {
+async function sherpabot() {
   const client = new Discord.Client();
 
   client.on('ready', () => {
@@ -66,7 +66,7 @@ want to see a list of available commands.');
     }
   });
 
-  client.login(process.env.DISCORD_TOKEN);
-}
+  await client.login(process.env.DISCORD_TOKEN);
+};
 
-export default sherpabot;
+module.exports = sherpabot;
