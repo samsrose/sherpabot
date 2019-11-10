@@ -1,8 +1,8 @@
 'use strict';
 
 const dotenv = require('dotenv');
-const app = require('./functions/server');
-const sherpabot = require("./functions/sherpabot");
+const app = require('./src/server');
+const sherpabot = require("./src/sherpabot");
 
 const result = dotenv.config({ path: './.env' });
 if (result.error) {

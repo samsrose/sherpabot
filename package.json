@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/chingu-x/sherpabot#readme",
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build src",
     "start": "nodemon server-local.js"
   },
   "dependencies": {
