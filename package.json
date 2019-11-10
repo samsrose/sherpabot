@@ -2,7 +2,7 @@
   "name": "sherpabot",
   "version": "0.1.0",
   "description": "A Discord 'bot to help guide members of the Chingu Community",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/chingu-x/sherpabot#readme",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js",
-    "webpack": "webpack -wd"
+    "start": "nodemon --exec babel-node src/server.js",
+    "build": "webpack -wd"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
