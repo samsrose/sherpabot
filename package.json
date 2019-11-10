@@ -25,7 +25,8 @@
     "start": "nodemon server-local.js"
   },
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "@discordjs/uws": "^10.149.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
