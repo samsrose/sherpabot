@@ -21,7 +21,7 @@ tasks on members' behalf.
 
 Commands are entered in the Discord message input box as:
 
-      `sherpa!<command> <arguments>`
+`sherpa!<command> <arguments>`
 
 ### Help Command
 
