@@ -4,23 +4,26 @@ const dotenv = require('dotenv');
 const express = require('express');
 const sherpabot = require("./src/sherpabot");
 
-const result = dotenv.config({ path: './.env' });
-if (result.error) {
-  throw result.error
+if (process.env.NODE_ENV !== 'production') {
+   const result = dotenv.config({ path: './.env' });
+   if (result.error) {
+      throw result.error
+   }
 }
 
 sherpabot();
 
 const app = express();
-app.use(express.static('public'));
-
-app.get('/', function (req, res) {
-   res.send('Hello World');
-})
-
-var server = app.listen(3000, function () {
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("Example app listening at http://%s:%s", host, port)
-})
+app.get('/', (req, res) => {
+   res
+     .status(200)
+     .send('Sherpabot is up and running!')
+     .end();
+ });
+ 
+ // Start the server
+ const PORT = process.env.PORT || 8080;
+ app.listen(PORT, () => {
+   console.log(`Sherpabot listening on port ${PORT}`);
+   console.log('Press Ctrl+C to quit.');
+ });
