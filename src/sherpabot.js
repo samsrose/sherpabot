@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
-const helpcmds = require('./helpcmds');
 const doccmds = require('./doccmds');
+const helpcmds = require('./helpcmds');
+const issuecmds = require('./issuecmds');
 
 async function sherpabot() {
   const client = new Discord.Client();
@@ -24,37 +25,17 @@ async function sherpabot() {
 
     // Validate and process commands
     switch(command) {
-      // Display list of commands
       case '':
       case 'cmds':
       case 'help':
         helpcmds(msg, commandPrefix, command, args);
         break;
-      // Display documentation URL's
       case 'doc':
         doccmds(msg, commandPrefix, command, args);
-        /*
-        if (args.length === 0) {
-          msg.reply('https://docs.chingu.io');
-        }
-        else if (args[0] === 'chingu') {
-          msg.reply('https://chingu.docs.chingu.io');
-        }
-        else if (args[0] === 'voyage') {
-          msg.reply('https://voyage.docs.chingu.io');
-        }
-        else if (args[0] === 'pair') {
-          msg.reply('https://pairprog.docs.chingu.io');
-        }
-        else if (args[0] === 'tech') {
-          msg.reply('https://techres.docs.chingu.io');
-        }
-        else if (args[0] === 'proj') {
-          msg.reply('https://projres.docs.chingu.io');
-        }
-        */
         break;
-      // If command was unrecognized...
+      case 'issue':
+        issuecmds(msg, commandPrefix, command, args);
+        break;
       default:
         msg.reply('You have entered and invalid command. Try `sherpa!` if you \
 want to see a list of available commands.');

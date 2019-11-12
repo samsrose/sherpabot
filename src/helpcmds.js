@@ -20,6 +20,7 @@ Please report this to a Chingu administrator.`);
       \n\`${commandPrefix}help\` - List Sherpa commands \
       \n\`${commandPrefix}cmds\` - List Sherpa commands \
       \n\`${commandPrefix}help doc\` - Display URL for documentation site \
+      \n\`${commandPrefix}help issue\` - Display URL for documentation site \
     `);
   } else if (args[0] === 'doc' || args[0] === 'docs') {
     msg.reply(` __**Sherpa doc Commands:**__ \
@@ -28,6 +29,10 @@ Please report this to a Chingu administrator.`);
       \n\`${commandPrefix}doc pair\`   - Display URL for Pair Projgramming documentation \
       \n\`${commandPrefix}doc tech\`   - Display URL for technical resources \
       \n\`${commandPrefix}doc proj\`   - Display URL for project resources \
+    `);
+  } else if (args[0] === 'issue') {
+    msg.reply(` __**Sherpa issue Commands:**__ \
+      \n\`${commandPrefix}issue\` - Display URL for opening an issue for the Chingu team \
     `);
   } else {
     msg.reply(`I'm sorry, but I don't understand \`${args[0]}\`. Use \
