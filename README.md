@@ -4,7 +4,7 @@
 
 * [Overview](#overview)
 * [Commands](#commands)
-* [Building and Running](#building-and-running)
+* [Building & Running](#building--running)
 * [Dependencies](#dependencies)
 * [Change Log](#change-log)
 * [Contributing](#contributing)
@@ -95,10 +95,10 @@ N/a
 > @johndoe, https://chingu.docs.chingu.io/about/rptissue
 ___
 
-## Building and Running
+## Building & Running
 
 * [Environment Variables](#environment-variables)
-* [Building & Deploying Sherpabot](#building-&-deploying-sherpabot)
+* [Building & Deploying Sherpabot](#building--deploying-sherpabot)
 * [Starting Sherpabot](#starting-sherpabot)
 
 ### Environment Variables
