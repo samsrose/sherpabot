@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+const helpcmds = require('./helpcmds');
+const doccmds = require('./doccmds');
 
 async function sherpabot() {
   const client = new Discord.Client();
@@ -26,20 +28,12 @@ async function sherpabot() {
       case '':
       case 'cmds':
       case 'help':
-        msg.reply(` __**Sherpa Commands:**__ \
-          \n\`${commandPrefix}    \` - List Sherpa commands \
-          \n\`${commandPrefix}help\` - List Sherpa commands \
-          \n\`${commandPrefix}cmds\` - List Sherpa commands \
-          \n\`${commandPrefix}doc\`        - Display URL for documentation site \
-          \n\`${commandPrefix}doc chingu\` - Display URL for Chingu documentation \
-          \n\`${commandPrefix}doc voyage\` - Display URL for Voyage documentation \
-          \n\`${commandPrefix}doc pair\`   - Display URL for Pair Projgramming documentation \
-          \n\`${commandPrefix}doc tech\`   - Display URL for technical resources \
-          \n\`${commandPrefix}doc proj\`   - Display URL for project resources \
-        `);
+        helpcmds(msg, commandPrefix, command, args);
         break;
       // Display documentation URL's
       case 'doc':
+        doccmds(msg, commandPrefix, command, args);
+        /*
         if (args.length === 0) {
           msg.reply('https://docs.chingu.io');
         }
@@ -58,6 +52,7 @@ async function sherpabot() {
         else if (args[0] === 'proj') {
           msg.reply('https://projres.docs.chingu.io');
         }
+        */
         break;
       // If command was unrecognized...
       default:
