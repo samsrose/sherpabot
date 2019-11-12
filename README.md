@@ -57,7 +57,7 @@ Display one or more URLs to the Chingu documentation you have requested.
 
 **_Command:_** 
 
-`sherpa!doc <arguments>`
+```sherpa!doc <arguments>```
 
 **_Arguments:_**
 
