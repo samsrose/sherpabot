@@ -1,4 +1,4 @@
-# Sherpabot - Helping guide the way for Chingu Community Members
+# Sherpabot - Helping to guide the Chingu Community
 
 ## Table of Contents
 
