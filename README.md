@@ -41,12 +41,12 @@ N/a
 
 `sherpa!` will display:
 
-> @johndoe,   Sherpa Commands:<br>
-`sherpa!  `- List Sherpa commands<br>
-`sherpa!help` - List Sherpa commands<br>
-`sherpa!cmds` - List Sherpa commands<br>
-`sherpa!help doc` - Display URL for documentation site<br>
-`sherpa!help issue` - Display URL for documentation site<br>
+> @johndoe,   Sherpa Commands:<br />
+`sherpa!  `- List Sherpa commands<br />
+`sherpa!help` - List Sherpa commands<br />
+`sherpa!cmds` - List Sherpa commands<br />
+`sherpa!help doc` - Display URL for documentation site<br />
+`sherpa!help issue` - Display URL for documentation site<br />
 ___
 
 ### Doc Command
@@ -61,12 +61,12 @@ Display one or more URLs to the Chingu documentation you have requested.
 
 **_Arguments:_**
 
-Omitted - Display a link to the Chingu organization documentation
-`chingu` - Display a link to the Chingu organization documentation
-`voyage` - Display a link to the documentation defining the Voyage program
-`pair` - Display a link to the documentation defining the Pair Programming program
-`tech` - Display a link to Technical Resources
-`proj` - Display a link to Project Resources
+Omitted - Display a link to the Chingu organization documentation<br />
+`chingu` - Display a link to the Chingu organization documentation<br />
+`voyage` - Display a link to the documentation defining the Voyage program<br />
+`pair` - Display a link to the documentation defining the Pair Programming program<br />
+`tech` - Display a link to Technical Resources<br />
+`proj` - Display a link to Project Resources<br />
 
 **_Example:_**
 
