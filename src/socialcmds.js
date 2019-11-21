@@ -19,4 +19,4 @@ Please report this to a Chingu administrator.`);
 
 };
 
-module.exports = issuecmds;
+module.exports = socialcmds;

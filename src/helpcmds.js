@@ -18,7 +18,6 @@ Please report this to a Chingu administrator.`);
     msg.reply(` __**Sherpa Commands:**__ \
       \n\`${commandPrefix}    \` - List Sherpa commands \
       \n\`${commandPrefix}help\` - List Sherpa commands \
-      \n\`${commandPrefix}cmds\` - List Sherpa commands \
       \n\`${commandPrefix}help doc\` - Display URL for documentation site \
       \n\`${commandPrefix}help issue\` - Display URL for opening an issue for the Chingu team \
       \n\`${commandPrefix}help social\` - Display URLs for Chingu social media sites \
@@ -35,6 +34,10 @@ Please report this to a Chingu administrator.`);
     msg.reply(` __**Sherpa issue Commands:**__ \
       \n\`${commandPrefix}issue\` - Display URL for opening an issue for the Chingu team \
     `);
+  } else if (args[0] === 'social') {
+    msg.reply(` __**Sherpa social Commands:**__ \
+      \n\`${commandPrefix}social\` - Display URL's for Chingu social media sites \
+    `);  
   } else {
     msg.reply(`I'm sorry, but I don't understand \`${args[0]}\`. Use \
 \`${commandPrefix}help\` to see a list of valid commands.`);
