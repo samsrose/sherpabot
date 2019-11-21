@@ -20,7 +20,8 @@ Please report this to a Chingu administrator.`);
       \n\`${commandPrefix}help\` - List Sherpa commands \
       \n\`${commandPrefix}cmds\` - List Sherpa commands \
       \n\`${commandPrefix}help doc\` - Display URL for documentation site \
-      \n\`${commandPrefix}help issue\` - Display URL for documentation site \
+      \n\`${commandPrefix}help issue\` - Display URL for opening an issue for the Chingu team \
+      \n\`${commandPrefix}help social\` - Display URLs for Chingu social media sites \
     `);
   } else if (args[0] === 'doc' || args[0] === 'docs') {
     msg.reply(` __**Sherpa doc Commands:**__ \

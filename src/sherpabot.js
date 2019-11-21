@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const doccmds = require('./doccmds');
 const helpcmds = require('./helpcmds');
 const issuecmds = require('./issuecmds');
+const socialcmds = require('./socialcmds');
 
 async function sherpabot() {
   const client = new Discord.Client();
@@ -26,7 +27,6 @@ async function sherpabot() {
     // Validate and process commands
     switch(command) {
       case '':
-      case 'cmds':
       case 'help':
         helpcmds(msg, commandPrefix, command, args);
         break;
@@ -36,6 +36,9 @@ async function sherpabot() {
       case 'issue':
         issuecmds(msg, commandPrefix, command, args);
         break;
+      case 'social':
+        socialcmds(msg, commandPrefix, command, args);
+        break;  
       default:
         msg.reply('You have entered and invalid command. Try `sherpa!` if you \
 want to see a list of available commands.');
