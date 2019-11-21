@@ -1,4 +1,8 @@
 const Discord = require('discord.js');
+const doccmds = require('./doccmds');
+const helpcmds = require('./helpcmds');
+const issuecmds = require('./issuecmds');
+const socialcmds = require('./socialcmds');
 
 async function sherpabot() {
   const client = new Discord.Client();
@@ -22,44 +26,19 @@ async function sherpabot() {
 
     // Validate and process commands
     switch(command) {
-      // Display list of commands
       case '':
-      case 'cmds':
       case 'help':
-        msg.reply(` __**Sherpa Commands:**__ \
-          \n\`${commandPrefix}    \` - List Sherpa commands \
-          \n\`${commandPrefix}help\` - List Sherpa commands \
-          \n\`${commandPrefix}cmds\` - List Sherpa commands \
-          \n\`${commandPrefix}doc\`        - Display URL for documentation site \
-          \n\`${commandPrefix}doc chingu\` - Display URL for Chingu documentation \
-          \n\`${commandPrefix}doc voyage\` - Display URL for Voyage documentation \
-          \n\`${commandPrefix}doc pair\`   - Display URL for Pair Projgramming documentation \
-          \n\`${commandPrefix}doc tech\`   - Display URL for technical resources \
-          \n\`${commandPrefix}doc proj\`   - Display URL for project resources \
-        `);
+        helpcmds(msg, commandPrefix, command, args);
         break;
-      // Display documentation URL's
       case 'doc':
-        if (args.length === 0) {
-          msg.reply('https://docs.chingu.io');
-        }
-        else if (args[0] === 'chingu') {
-          msg.reply('https://chingu.docs.chingu.io');
-        }
-        else if (args[0] === 'voyage') {
-          msg.reply('https://voyage.docs.chingu.io');
-        }
-        else if (args[0] === 'pair') {
-          msg.reply('https://pairprog.docs.chingu.io');
-        }
-        else if (args[0] === 'tech') {
-          msg.reply('https://techres.docs.chingu.io');
-        }
-        else if (args[0] === 'proj') {
-          msg.reply('https://projres.docs.chingu.io');
-        }
+        doccmds(msg, commandPrefix, command, args);
         break;
-      // If command was unrecognized...
+      case 'issue':
+        issuecmds(msg, commandPrefix, command, args);
+        break;
+      case 'social':
+        socialcmds(msg, commandPrefix, command, args);
+        break;  
       default:
         msg.reply('You have entered and invalid command. Try `sherpa!` if you \
 want to see a list of available commands.');

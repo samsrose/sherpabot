@@ -1,9 +1,10 @@
-# Sherpabot - Helping guide the way for Chingu Community Members
+# Sherpabot - Helping to guide the Chingu Community
 
 ## Table of Contents
 
 * [Overview](#overview)
 * [Commands](#commands)
+* [Building & Running](#building--running)
 * [Dependencies](#dependencies)
 * [Change Log](#change-log)
 * [Contributing](#contributing)
@@ -18,45 +19,154 @@ tasks on members' behalf.
 
 ## Commands
 
-### `!sherpa meet new`
+Commands are entered in the Discord message input box as:
+
+`sherpa!<command> <arguments>`
+
+### Help Command
 
 **_Description:_** 
-Start the process of creating a new meeting with your team. This command will
-display a URL to the 
 
-**_Command:_** `!sherpa meet new`
+Display a list of commands that are available to the user.
 
-**_Options:_**
+**_Command:_** 
+
+`sherpa!`, `sherpa!cmds`, or `sherpa!help`
+
+**_Arguments:_**
+
 N/a
 
+**_Example:_**
+
+`sherpa!` will display:
+
+> @johndoe,   Sherpa Commands:<br />
+`sherpa!  `- List Sherpa commands<br />
+`sherpa!help` - List Sherpa commands<br />
+`sherpa!cmds` - List Sherpa commands<br />
+`sherpa!help doc` - Display URL for documentation site<br />
+`sherpa!help issue` - Display URL for documentation site<br />
+___
+
+### Doc Command
+
+**_Description:_** 
+
+Display one or more URLs to the Chingu documentation you have requested.
+
+**_Command:_** 
+
+`sherpa!doc <arguments>`
+
+**_Arguments:_**
+
+Omitted - Display a link to the Chingu organization documentation<br />
+`chingu` - Display a link to the Chingu organization documentation<br />
+`voyage` - Display a link to the documentation defining the Voyage program<br />
+`pair` - Display a link to the documentation defining the Pair Programming program<br />
+`tech` - Display a link to Technical Resources<br />
+`proj` - Display a link to Project Resources<br />
+
+**_Example:_**
+
+`sherpa!doc voyage` will display:
+
+> @johndoe, https://chingu.docs.chingu.io/
+___
+
+### Issue Command
+
+**_Description:_** 
+Display information to help you open an issue for the Chingu team to look into.
+
+**_Command:_** 
+
+`sherpa!issue`
+
+**_Arguments:_**
+
+N/a
+
+**_Example:_**
+
+`sherpa!issue` will display:
+
+> @johndoe, https://chingu.docs.chingu.io/about/rptissue
+___
+
+## Building & Running
+
+* [Environment Variables](#environment-variables)
+* [Building & Deploying Sherpabot](#building--deploying-sherpabot)
+* [Starting Sherpabot](#starting-sherpabot)
 
 ### Environment Variables
 
-Environment variables that control the operation of the app are defined in the
-`.env` file in the application root. These variables and their usage are shown
-in the table below. Adding or replacing entries in `.env` should be done through
-the Chuseok application. `.env` should NOT be manually updated since some
-entries are encrypted.
+Environment variables are defined in both the `.env` and `app.yaml` files in 
+root of the project. Environment variables in `.env` are used when `NODE_ENV` 
+is set to `development` and from `app.yaml` when `NODE_ENV` is `production`.  
 
-Environment variables maintained in the `.env` file are made available to the
-application code via `process.env.<variable-name>`. For example, the
-access token for the Discord bot is accessed in the code by referencing
-`process.env.DISCORD_TOKEN`.
+Both the `.env` and `app.yaml` files have been added to `.gitignore` to keep
+the Discord 'bot token confidential.
 
-Remember that even though this keeps secure tokens like client id's and secrets
-out of application code it does not make them secure.
+The specific variables and their usage are shown in the table below.
 
 | Environment Variable | Description       | Example Setting |
 |:---------------------|:------------------|:----------------|
-| DISCORD_TOKEN            | Discord Bot token | `DISCORD_TOKEN=A8H3RNL.35UAJD26JEOKJMNDAD0.UDNLADMEMCI2UCNH5UF48KDMB3DD5NW` |
+| DISCORD_TOKEN        | Discord Bot token | `DISCORD_TOKEN=A8H3RNL.35UAJD26JEOKJMNDAD0.UDNLADMEMCI2UCNH5UF48KDMB3DD5NW` |
+| COMMAND_PREFIX       | Sherpa command prefix | `sherpa!` |
 
+### Building & Deploying Sherpabot
 
-## Running Sherpabot
+Building Sherpabot requires defining the 'bot in the Discord Developer site 
+through the [Applications screen](https://discordapp.com/developers/applications/).
+As part of this process a 'bot token will be generated which must be added to 
+both the `.env` and `app.yaml` files as the value of the `DISCORD_TOKEN` 
+variable.
 
-To start Sherpabot issue the command `npm run webpack` in one terminal window
-and `npm run dev` in another terminal window.
+Sherpabot currently runs on Gcloud. Deploying it requires the 
+[Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/nodejs/setting-up-environment_).
+To deploy the app execute the command:
+```
+gcloud app deploy --promote
+```
+from your terminal session. 
 
-To run the Sherpa 'bot application open the URL `http://localhost:5000`.
+Your `app.yaml` file, used by Gcloud, should contain:
+```
+runtime: nodejs10
+service: sherpa
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
+
+automatic_scaling:
+  max_instances: 1
+
+env_variables:
+  DISCORD_TOKEN: "<discord-bot-token>"
+  COMMAND_PREFIX: "sherpa!"
+```
+
+### Starting Sherpabot
+
+The following environment-specific commands may be used to start Sherpa:
+
+  Production: `npm start`
+  Development: `npm run startdev`
+
+Note that for testing purposes you may find it useful to set the `COMMAND_PREFIX`
+environment variable in the `.env` file to something different from what it is
+set to in the `app.yaml` file. For example, if it's set to `sherpa!` in 
+`app.yaml` you can set it to `sherpatest!` in `.env` to allow testing to be
+performed without disrupting production users.
+
+Sherpa also has a webpage containing its current status. When running localling
+this can be accessed at the URL `http://localhost:8080`.
 
 ## Dependencies
 
