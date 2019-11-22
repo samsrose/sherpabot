@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const doccmds = require('./doccmds');
 const helpcmds = require('./helpcmds');
 const issuecmds = require('./issuecmds');
+const schedulecmds = require('./schedulecmds');
 const socialcmds = require('./socialcmds');
 
 async function sherpabot() {
@@ -35,6 +36,10 @@ async function sherpabot() {
         break;
       case 'issue':
         issuecmds(msg, commandPrefix, command, args);
+        break;
+      case 'sched':
+      case 'schedule':
+        schedulecmds(msg, commandPrefix, command, args);
         break;
       case 'social':
         socialcmds(msg, commandPrefix, command, args);
