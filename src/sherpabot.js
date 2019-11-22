@@ -17,11 +17,11 @@ async function sherpabot() {
       return;
     }
     // Ignore messages that don't start with our prefix
-    if(msg.content.indexOf(commandPrefix) !== 0) {
+    if(msg.content.toLowerCase().indexOf(commandPrefix) !== 0) {
       return;
     }
     // Separate command from its arguments
-    const args = msg.content.slice(commandPrefix.length).trim().split(/ +/g);
+    const args = msg.content.slice(commandPrefix.length).trim().toLowerCase().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     // Validate and process commands
