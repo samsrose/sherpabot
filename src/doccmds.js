@@ -1,10 +1,3 @@
-/**
- * Process a Sherpabot doc command
- * @param {Object} msg Discord message object containing the users request
- * @param {String} commandPrefix Sherpa command prefix (ex. `sherpa!`)
- * @param {String} command Sherpa command extracted from msg
- * @param {[String]} args Sherpa command arguments
- */
 
 const docCmdArgs = [
   { argument: 'chingu', reply: 'https://chingu.docs.chingu.io' },
@@ -14,6 +7,13 @@ const docCmdArgs = [
   { argument: 'voyage', reply: 'https://voyage.docs.chingu.io' },
 ];
 
+/**
+ * Process a Sherpabot doc command
+ * @param {Object} msg Discord message object containing the users request
+ * @param {String} commandPrefix Sherpa command prefix (ex. `sherpa!`)
+ * @param {String} command Sherpa command extracted from msg
+ * @param {[String]} args Sherpa command arguments
+ */
 async function doccmds(msg, commandPrefix, command, args) {
   if (command !== 'doc') {
     msg.reply(`Sherpabot error: Doc command routing error (command=${command}). \
