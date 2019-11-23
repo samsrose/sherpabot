@@ -13,9 +13,9 @@ Please report this to a Chingu administrator.`);
     return;
   }
 
-  msg.reply('https://dev.to/chingu');
-  msg.reply('https://medium.com/chingu');
-  msg.reply('https://twitter.com/ChinguCollabs');
+  msg.reply('Dev.to --> https://dev.to/chingu\\');
+  msg.reply('Medium --> https://medium.com/chingu\\');
+  msg.reply('Twitter --> https://twitter.com/ChinguCollabs\\');
 
 };
 
