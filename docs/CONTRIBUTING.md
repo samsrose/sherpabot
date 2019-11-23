@@ -51,8 +51,7 @@ example, URL's to Gist's.
 ### Testing
 
 Please update the tests to reflect your code changes. Pull requests will not
-be accepted if they are failing
-on [Travis CI](https://travis-ci.org/jdmedlock/meteorite).
+be accepted if they are failing any tests.
 
 ### Documentation
 
@@ -84,7 +83,10 @@ be updated when releasing a new version.
 
 ### Releasing
 
-*_TBD_*
+For security reasons developers are not permitted to deploy into production
+at this time. When a PR is approved a member of the Chingu team will deploy
+the change into Production and notify the developer once deployment is
+successful.
 
 ### Running Examples
 
