@@ -44,9 +44,11 @@ N/a
 > @johndoe,   Sherpa Commands:<br />
 `sherpa!  `- List Sherpa commands<br />
 `sherpa!help` - List Sherpa commands<br />
-`sherpa!cmds` - List Sherpa commands<br />
 `sherpa!help doc` - Display URL for documentation site<br />
 `sherpa!help issue` - Display URL for documentation site<br />
+`sherpa!help sched|schedule` - Display URL for Chingu Schedule of Events<br />
+`sherpa!help social` - Display URL for Chingu social media sites<br />
+
 ___
 
 ### Doc Command
@@ -95,6 +97,51 @@ N/a
 > @johndoe, https://chingu.docs.chingu.io/about/rptissue
 ___
 
+### Schedule Command
+
+**_Description:_** 
+Display a link to the Chingu Schedule of Events.
+
+**_Command:_** 
+
+`sherpa!sched`
+`sherpa!schedule`
+
+**_Arguments:_**
+
+N/a
+
+**_Example:_**
+
+`sherpa!sched` or `sherpa!schedule` will display:
+
+> @johndoe, https://chingu.docs.chingu.io/intro/schedule<br />
+
+___
+
+### Social Command
+
+**_Description:_** 
+Display a list of URL's for Chingu social media sites.
+
+**_Command:_** 
+
+`sherpa!social`
+
+**_Arguments:_**
+
+N/a
+
+**_Example:_**
+
+`sherpa!social` will display:
+
+> @johndoe, https://dev.to/chingu<br />
+@johndoe, https://medium.com/chingu<br />
+@johndoe, https://twitter.com/ChinguCollabs<br />
+
+___
+
 ## Building & Running
 
 * [Environment Variables](#environment-variables)
@@ -125,14 +172,6 @@ As part of this process a 'bot token will be generated which must be added to
 both the `.env` and `app.yaml` files as the value of the `DISCORD_TOKEN` 
 variable.
 
-Sherpabot currently runs on Gcloud. Deploying it requires the 
-[Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/nodejs/setting-up-environment_).
-To deploy the app execute the command:
-```
-gcloud app deploy --promote
-```
-from your terminal session. 
-
 Your `app.yaml` file, used by Gcloud, should contain:
 ```
 runtime: nodejs10
@@ -152,6 +191,17 @@ env_variables:
   COMMAND_PREFIX: "sherpa!"
 ```
 
+Sherpabot currently runs on Gcloud. Deploying it requires the 
+[Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/nodejs/setting-up-environment_).
+To deploy the app execute the following:
+```
+git checkout master
+gcloud app deploy
+```
+from your terminal session. Once successfully deployed you should manually
+terminate old versions from the GCloud App Engine 
+[dashboard](https://console.cloud.google.com/appengine?project=chingu&duration=P1D&serviceId=sherpa).
+
 ### Starting Sherpabot
 
 The following environment-specific commands may be used to start Sherpa:
@@ -162,10 +212,10 @@ The following environment-specific commands may be used to start Sherpa:
 Note that for testing purposes you may find it useful to set the `COMMAND_PREFIX`
 environment variable in the `.env` file to something different from what it is
 set to in the `app.yaml` file. For example, if it's set to `sherpa!` in 
-`app.yaml` you can set it to `sherpatest!` in `.env` to allow testing to be
-performed without disrupting production users.
+`app.yaml`, you can set it to `sherpatest!` in `.env` to allow testing using
+a local development server without disrupting production users.
 
-Sherpa also has a webpage containing its current status. When running localling
+Sherpa also has a webpage containing its current status. When running locally
 this can be accessed at the URL `http://localhost:8080`.
 
 ## Dependencies
