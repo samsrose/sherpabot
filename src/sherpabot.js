@@ -1,9 +1,19 @@
 const Discord = require('discord.js');
-const doccmds = require('./doccmds');
-const helpcmds = require('./helpcmds');
-const issuecmds = require('./issuecmds');
-const schedulecmds = require('./schedulecmds');
-const socialcmds = require('./socialcmds');
+const doccmd = require('./doccmds');
+const helpcmd = require('./helpcmds');
+const issuecmd = require('./issuecmds');
+const schedulecmd = require('./schedulecmds');
+const socialcmd = require('./socialcmds');
+
+const commandList = [
+  { command: '', func: helpcmd },
+  { command: 'help', func: helpcmd },
+  { command: 'doc', func: doccmd },
+  { command: 'issue', func: issuecmd },
+  { command: 'sched', func: schedulecmd },
+  { command: 'schedule', func: schedulecmd },
+  { command: 'social', func: socialcmd },
+];
 
 async function sherpabot() {
   const client = new Discord.Client();
@@ -13,40 +23,33 @@ async function sherpabot() {
   });
 
   client.on('message', async msg => {
-    const commandPrefix = process.env.COMMAND_PREFIX;
     if(msg.author.bot) {
       return;
     }
+
     // Ignore messages that don't start with our prefix
+    const commandPrefix = process.env.COMMAND_PREFIX;
     if(msg.content.toLowerCase().indexOf(commandPrefix) !== 0) {
       return;
     }
+    
     // Separate command from its arguments
     const args = msg.content.slice(commandPrefix.length).trim().toLowerCase().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     // Validate and process commands
-    switch(command) {
-      case '':
-      case 'help':
-        helpcmds(msg, commandPrefix, command, args);
-        break;
-      case 'doc':
-        doccmds(msg, commandPrefix, command, args);
-        break;
-      case 'issue':
-        issuecmds(msg, commandPrefix, command, args);
-        break;
-      case 'sched':
-      case 'schedule':
-        schedulecmds(msg, commandPrefix, command, args);
-        break;
-      case 'social':
-        socialcmds(msg, commandPrefix, command, args);
-        break;  
-      default:
-        msg.reply('You have entered and invalid command. Try `sherpa!` if you \
-want to see a list of available commands.');
+    const commandFunction = commandList.reduce((commandFunction, currentEntry) => {
+      if (currentEntry.command === command) {
+        return commandFunction = currentEntry.func;
+      }
+      return commandFunction;
+    }, null);
+
+    if (commandFunction !== null) {
+      commandFunction(msg, commandPrefix, command, args);
+    } else {
+      msg.reply('You have entered and invalid command. Try `sherpa!` if you \
+      want to see a list of available commands.');
     }
   });
 
