@@ -5,6 +5,15 @@
  * @param {String} command Sherpa command extracted from msg
  * @param {[String]} args Sherpa command arguments
  */
+
+const docCmdArgs = [
+  { argument: 'chingu', reply: 'https://chingu.docs.chingu.io' },
+  { argument: 'pair', reply: 'https://pairprog.docs.chingu.io' },
+  { argument: 'proj', reply: 'https://projres.docs.chingu.io' },
+  { argument: 'tech', reply: 'https://techres.docs.chingu.io' },
+  { argument: 'voyage', reply: 'https://voyage.docs.chingu.io' },
+];
+
 async function doccmds(msg, commandPrefix, command, args) {
   if (command !== 'doc') {
     msg.reply(`Sherpabot error: Doc command routing error (command=${command}). \
@@ -16,27 +25,16 @@ Please report this to a Chingu administrator.`);
   if (args.length === 0) {
     msg.reply('https://docs.chingu.io');
   } else {
-
-    switch(args[0]) {
-      case 'chingu':
-        msg.reply('https://chingu.docs.chingu.io');
-        break;
-      case 'voyage':
-        msg.reply('https://voyage.docs.chingu.io');
-        break;
-      case 'pair':
-        msg.reply('https://pairprog.docs.chingu.io');
-        break;
-      case 'tech':
-        msg.reply('https://techres.docs.chingu.io');
-        break;
-      case 'proj':
-        msg.reply('https://projres.docs.chingu.io');
-        break;
-      default:
-        msg.reply(`I'm sorry, but I don't understand \`${args[0]}\`. Use \
-  \`${commandPrefix}help doc\` to see a list of valid commands.`);
+    for(let i = 0; i < docCmdArgs.length; i++) {
+      if (docCmdArgs[i].argument === args[0]) {
+        msg.reply(docCmdArgs[i].reply);
+        return;
+      }
     }
+    
+    msg.reply(`I'm sorry, but I don't understand \`${args[0]}\`. Use \
+\`${commandPrefix}help doc\` to see a list of valid commands.`);
+
   }
 
 };
