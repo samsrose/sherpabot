@@ -49,7 +49,7 @@ async function sherpabot() {
       commandFunction(msg, commandPrefix, command, args);
     } else {
       msg.reply('You have entered and invalid command. Try `sherpa!` if you \
-      want to see a list of available commands.');
+want to see a list of available commands.');
     }
   });
 
