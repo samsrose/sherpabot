@@ -142,6 +142,34 @@ N/a
 
 ___
 
+### Time Command
+
+**_Description:_** 
+Display a the current time in another location.
+
+**_Command:_** 
+
+`sherpa!time in <city-name>`
+
+**_Arguments:_**
+
+_city-name_ the name of the city you who's current time you need to display
+
+**_Example:_**
+
+`sherpa!time in new york` will display:
+
+> @johndoe, In New York it is currently 11:05:32 AM
+
+`sherpa!time in london` will display:
+
+> @johndoe, 3 locations were found.<br />
+@johndoe, In London,  Canada  it is currently 11:05:45 AM<br />
+@johndoe, In London,  United Kingdom  it is currently 4:05:45 PM<br />
+@johndoe, In London, KY United States of America  it is currently 11:05:45 AM<br />
+
+___
+
 ## Building & Running
 
 * [Environment Variables](#environment-variables)

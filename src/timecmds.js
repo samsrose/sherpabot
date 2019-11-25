@@ -15,20 +15,42 @@ Please report this to a Chingu administrator.`);
     return;
   }
 
-  // Determine the current time at the specified location
   if (args[0] === 'in') {
-    const cityLookup = cityTimezones.lookupViaCity(args[1]);
-    console.log(cityLookup)
+    // Locate the matching cities
+    const cityName = args.reduce((cityName, currentArg, currentIndex)=> {
+      if (currentIndex !== 0) {
+        return cityName + ' ' + currentArg;
+      }
+      return cityName;
+    }, '').trim();
+    const cities = cityTimezones.lookupViaCity(cityName);
+
+    // Customize the message based on whether there were no matches, a single 
+    // match, or multiple matching cities.
     let date = new Date();
     let options = {
-      timeZone: cityLookup[0].timezone,
-      timeStyle: 'long'
+      timeStyle: 'long',
     };
-    msg.reply(`In ${cityLookup[0].city} it is currently ${date.toLocaleTimeString('en-US', options)}`);
-    return;
+
+    if (cities.length <= 0) {
+      msg.reply(`The location ${cityName} wasn't found!`);
+      return;
+    } else if (cities.length === 1) {
+      options.timeZone = cities[0].timezone;
+      msg.reply(`In ${cities[0].city} it is currently ${date.toLocaleTimeString('en-US', options)}`);
+      return;
+    } else if (cities.length > 1) {
+      msg.reply(`${cities.length} locations were found.`);
+      cities.forEach(city => {
+        options.timeZone = city.timezone;
+        const state = city.state_ansi !== undefined ? city.state_ansi : '';
+        msg.reply(`In ${city.city}, ${state} ${city.country}  it is currently ${date.toLocaleTimeString('en-US', options)}`);
+      });
+      return;
+    }
   } 
 
-  msg.reply(`I'm sorry, but I don't understand \`${commandArg}\`. Use \
+  msg.reply(`I'm sorry, but I don't understand \`${args[0]}\`. Use \
 \`${commandPrefix}help time\` to see a list of valid commands.`);
 
 };
