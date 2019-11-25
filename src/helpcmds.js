@@ -17,6 +17,7 @@ async function helpcmds(msg, commandPrefix, command, args) {
         \n\`${commandPrefix}help issue\` - Display URL for opening an issue for the Chingu team \
         \n\`${commandPrefix}help sched|schedule\` - Display URL for the Chingu Schedule of Events \
         \n\`${commandPrefix}help social\` - Display URLs for Chingu social media sites \
+        \n\`${commandPrefix}help time\` - Display the time \
       `
     }, { 
       argument: 'doc', reply: ` __**Sherpa doc Commands:**__ \
@@ -33,6 +34,10 @@ async function helpcmds(msg, commandPrefix, command, args) {
     }, { 
       argument: 'social', reply: ` __**Sherpa social Commands:**__ \
         \n\`${commandPrefix}social\` - Display URL's for Chingu social media sites \
+      ` 
+    }, { 
+      argument: 'time', reply: ` __**Sherpa time Commands:**__ \
+        \n\`${commandPrefix}time in <city-name>\` - Display current time in the specified city \
       ` 
     },
   ];
