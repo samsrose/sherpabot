@@ -4,6 +4,7 @@ const helpcmd = require('./helpcmds');
 const issuecmd = require('./issuecmds');
 const schedulecmd = require('./schedulecmds');
 const socialcmd = require('./socialcmds');
+const timecmd = require('./timecmds');
 
 const commandList = [
   { command: '', func: helpcmd },
@@ -13,6 +14,7 @@ const commandList = [
   { command: 'sched', func: schedulecmd },
   { command: 'schedule', func: schedulecmd },
   { command: 'social', func: socialcmd },
+  { command: 'time', func: timecmd },
 ];
 
 async function sherpabot() {
