@@ -1,5 +1,11 @@
 # Change Log
 
+### 0.1.4 - 2019-11-28
+
+- Add `ask` command to access info on how to ask for help
+- Update command help to provide a clearer description of what the various
+commands accomplish.
+
 ### 0.1.3 - 2019-11-25
 
 - Add `time in` command to display the time in the specified city

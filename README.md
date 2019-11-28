@@ -23,6 +23,14 @@ Commands are entered in the Discord message input box as:
 
 `sherpa!<command> <arguments>`
 
+* [help](#help-command)
+* [ask](#ask-command)
+* [doc](#doc-command)
+* [issue](#issue-command)
+* [schedule](#schedule-command)
+* [social](#social-command)
+* [time](#time-command)
+
 ### Help Command
 
 **_Description:_** 
@@ -42,13 +50,36 @@ N/a
 `sherpa!` will display:
 
 > @johndoe,   Sherpa Commands:<br />
-`sherpa!  `- List Sherpa commands<br />
-`sherpa!help` - List Sherpa commands<br />
-`sherpa!help doc` - Display URL for documentation site<br />
-`sherpa!help issue` - Display URL for documentation site<br />
-`sherpa!help sched|schedule` - Display URL for Chingu Schedule of Events<br />
-`sherpa!help social` - Display URL for Chingu social media sites<br />
+`sherpatest!`     - List Sherpa commands<br />
+`sherpatest!help` - List Sherpa commands<br />
+`sherpatest!help ask` - Access tips on how to ask for help<br />
+`sherpatest!help doc` - Access the Chingu Handbook<br />
+`sherpatest!help issue` - How to open an issue for the Chingu team<br />
+`sherpatest!help sched|schedule` - Access the Chingu Schedule of Events<br />
+`sherpatest!help social` - Display URLs for Chingu social media sites<br />
+`sherpatest!help time` - Display the time<br />
 
+___
+
+### Ask Command
+
+**_Description:_** 
+Display guidelines and tips for how to ask a question in Discord to maximize
+your results.
+
+**_Command:_** 
+
+`sherpa!ask`
+
+**_Arguments:_**
+
+N/a
+
+**_Example:_**
+
+`sherpa!ask will display:
+
+> @johndoe, https://chingu.docs.chingu.io/about/askhelp
 ___
 
 ### Doc Command

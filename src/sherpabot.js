@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const askcmd = require('./askcmds');
 const doccmd = require('./doccmds');
 const helpcmd = require('./helpcmds');
 const issuecmd = require('./issuecmds');
@@ -8,8 +9,9 @@ const timecmd = require('./timecmds');
 
 const commandList = [
   { command: '', func: helpcmd },
-  { command: 'help', func: helpcmd },
+  { command: 'ask', func: askcmd },
   { command: 'doc', func: doccmd },
+  { command: 'help', func: helpcmd },
   { command: 'issue', func: issuecmd },
   { command: 'sched', func: schedulecmd },
   { command: 'schedule', func: schedulecmd },

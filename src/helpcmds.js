@@ -13,23 +13,28 @@ async function helpcmds(msg, commandPrefix, command, args) {
       argument: '', reply: ` __**Sherpa Commands:**__ \
         \n\`${commandPrefix}    \` - List Sherpa commands \
         \n\`${commandPrefix}help\` - List Sherpa commands \
-        \n\`${commandPrefix}help doc\` - Display URL for documentation site \
-        \n\`${commandPrefix}help issue\` - Display URL for opening an issue for the Chingu team \
-        \n\`${commandPrefix}help sched|schedule\` - Display URL for the Chingu Schedule of Events \
+        \n\`${commandPrefix}help ask\` - Access tips on how to ask for help \
+        \n\`${commandPrefix}help doc\` - Access the Chingu Handbook \
+        \n\`${commandPrefix}help issue\` - How to open an issue for the Chingu team \
+        \n\`${commandPrefix}help sched|schedule\` - Access the Chingu Schedule of Events \
         \n\`${commandPrefix}help social\` - Display URLs for Chingu social media sites \
         \n\`${commandPrefix}help time\` - Display the time \
       `
     }, { 
+      argument: 'ask', reply: ` __**Sherpa ask Commands:**__ \
+        \n\`${commandPrefix}ask\` - Display tips on how to ask for help \
+      `
+    }, { 
       argument: 'doc', reply: ` __**Sherpa doc Commands:**__ \
-        \n\`${commandPrefix}doc chingu\` - Display URL for Chingu documentation \
-        \n\`${commandPrefix}doc voyage\` - Display URL for Voyage documentation \
-        \n\`${commandPrefix}doc pair\`   - Display URL for Pair Programming documentation \
-        \n\`${commandPrefix}doc tech\`   - Display URL for technical resources \
-        \n\`${commandPrefix}doc proj\`   - Display URL for project resources \
+        \n\`${commandPrefix}doc chingu\` - Access info about the Chingu organization \
+        \n\`${commandPrefix}doc voyage\` - Access info about your Voyage  \
+        \n\`${commandPrefix}doc pair\`   - Access info about Pair Programming sessions \
+        \n\`${commandPrefix}doc tech\`   - Access Technical Resources \
+        \n\`${commandPrefix}doc proj\`   - Access Project Resources \
       `
     }, { 
       argument: 'issue', reply: ` __**Sherpa issue Commands:**__ \
-        \n\`${commandPrefix}issue\` - Display URL for opening an issue for the Chingu team \
+        \n\`${commandPrefix}issue\` - How to open an issue for the Chingu team \
       `
     }, { 
       argument: 'social', reply: ` __**Sherpa social Commands:**__ \
