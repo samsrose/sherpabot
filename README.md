@@ -23,6 +23,14 @@ Commands are entered in the Discord message input box as:
 
 `sherpa!<command> <arguments>`
 
+* [help](#help-command)
+* [ask](#ask-command)
+* [doc](#doc-command)
+* [issue](#issue-command)
+* [schedule](#schedule-command)
+* [social](#social-command)
+* [time](#time-command)
+
 ### Help Command
 
 **_Description:_** 
@@ -48,7 +56,27 @@ N/a
 `sherpa!help issue` - Display URL for documentation site<br />
 `sherpa!help sched|schedule` - Display URL for Chingu Schedule of Events<br />
 `sherpa!help social` - Display URL for Chingu social media sites<br />
+___
 
+### Ask Command
+
+**_Description:_** 
+Display guidelines and tips for how to ask a question in Discord to maximize
+your results.
+
+**_Command:_** 
+
+`sherpa!ask`
+
+**_Arguments:_**
+
+N/a
+
+**_Example:_**
+
+`sherpa!ask will display:
+
+> @johndoe, https://chingu.docs.chingu.io/about/askhelp
 ___
 
 ### Doc Command
