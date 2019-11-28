@@ -13,7 +13,7 @@ async function helpcmds(msg, commandPrefix, command, args) {
       argument: '', reply: ` __**Sherpa Commands:**__ \
         \n\`${commandPrefix}    \` - List Sherpa commands \
         \n\`${commandPrefix}help\` - List Sherpa commands \
-        \n\`${commandPrefix}help ask\` - Access tips on how to get help \
+        \n\`${commandPrefix}help ask\` - Access tips on how to ask for help \
         \n\`${commandPrefix}help doc\` - Access the Chingu Handbook \
         \n\`${commandPrefix}help issue\` - How to open an issue for the Chingu team \
         \n\`${commandPrefix}help sched|schedule\` - Access the Chingu Schedule of Events \
