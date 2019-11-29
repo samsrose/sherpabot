@@ -1,22 +1,22 @@
 const Discord = require('discord.js');
-const askcmd = require('./askcmds');
-const doccmd = require('./doccmds');
-const helpcmd = require('./helpcmds');
-const issuecmd = require('./issuecmds');
-const schedulecmd = require('./schedulecmds');
-const socialcmd = require('./socialcmds');
-const timecmd = require('./timecmds');
+const askCommand = require('./askCommand');
+const docCommand = require('./docCommand');
+const helpCommand = require('./helpCommand');
+const issueCommand = require('./issueCommand');
+const scheduleCommand = require('./scheduleCommand');
+const socialCommand = require('./socialCommand');
+const timeCommand = require('./timeCommand');
 
 const commandList = [
-  { command: '', func: helpcmd },
-  { command: 'ask', func: askcmd },
-  { command: 'doc', func: doccmd },
-  { command: 'help', func: helpcmd },
-  { command: 'issue', func: issuecmd },
-  { command: 'sched', func: schedulecmd },
-  { command: 'schedule', func: schedulecmd },
-  { command: 'social', func: socialcmd },
-  { command: 'time', func: timecmd },
+  { command: '', func: helpCommand.process },
+  { command: 'ask', func: askCommand.process },
+  { command: 'doc', func: docCommand.process },
+  { command: 'help', func: helpCommand.process },
+  { command: 'issue', func: issueCommand.process },
+  { command: 'sched', func: scheduleCommand.process },
+  { command: 'schedule', func: scheduleCommand.process },
+  { command: 'social', func: socialCommand.process },
+  { command: 'time', func: timeCommand.process },
 ];
 
 async function sherpabot() {
