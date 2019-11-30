@@ -20,6 +20,7 @@ class helpCommand {
       { argument: 'ask', reply: askCommand.help }, 
       { argument: 'doc', reply: docCommand.help },
       { argument: 'issue', reply: issueCommand.help },
+      { argument: 'sched', reply: scheduleCommand.help },
       { argument: 'schedule', reply: scheduleCommand.help },
       { argument: 'social', reply: socialCommand.help },
       { argument: 'time', reply: timeCommand.help },

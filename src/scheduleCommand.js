@@ -26,7 +26,7 @@ class scheduleCommand {
    * @memberof askcmds
    */
   static help(commandPrefix) {
-    return ` __**Sherpa issue Commands:**__ \
+    return ` __**Sherpa schedule Commands:**__ \
 \n\`${commandPrefix}issue\` - How to open an issue for the Chingu team \
       `;
   };
