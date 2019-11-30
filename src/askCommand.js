@@ -16,7 +16,6 @@ Please report this to a Chingu administrator.`);
     }
 
     msg.reply('https://chingu.docs.chingu.io/about/askhelp');
-
   };
 
   /**
