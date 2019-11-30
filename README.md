@@ -277,6 +277,11 @@ a local development server without disrupting production users.
 Sherpa also has a webpage containing its current status. When running locally
 this can be accessed at the URL `http://localhost:8080`.
 
+### Testing
+
+Use the script `test` in `package.json` to test the commands made available 
+through Sherpa.
+
 ## Dependencies
 
 The Chuseok Bot extracts message traffic accessed through the Discord API
