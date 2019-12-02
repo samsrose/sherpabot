@@ -1,5 +1,11 @@
 # Change Log
 
+### 0.1.5 - 2019-11-30
+
+- Refactor command processing functions into classes that expose common 
+functionality to higher levels of the internal application.
+- Add automated tests
+
 ### 0.1.4 - 2019-11-28
 
 - Add `ask` command to access info on how to ask for help
