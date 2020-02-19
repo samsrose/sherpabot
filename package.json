@@ -1,5 +1,5 @@
 {
-  "name": "sherpabot",
+  "name": "budbot",
   "version": "0.1.2",
   "description": "A Discord 'bot to help guide members of the Chingu Community",
   "main": "server.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chingu-x/sherpabot.git"
+    "url": "git+https://github.com/chingu-x/budbot.git"
   },
   "keywords": [
     "discord",
@@ -17,9 +17,9 @@
   "author": "Jim D. Medlock",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chingu-x/sherpabot/issues"
+    "url": "https://github.com/chingu-x/budbot/issues"
   },
-  "homepage": "https://github.com/chingu-x/sherpabot#readme",
+  "homepage": "https://github.com/chingu-x/budbot#readme",
   "scripts": {
     "build": "",
     "start": "node server.js",

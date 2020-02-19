@@ -1,22 +1,20 @@
-
 class askCommand {
   /**
-   * Process a Sherpabot ask command
+   * Process a budbot ask command
    * @param {Object} msg Discord message object containing the users request
    * @param {String} commandPrefix Sherpa command prefix (ex. `sherpa!`)
    * @param {String} command Sherpa command extracted from msg
    * @param {[String]} args Sherpa command arguments
    */
   static async process(msg, commandPrefix, command, args) {
-    if (command !== 'ask') {
-      msg.reply(`Sherpabot error: Ask command routing error \`(command=${command})\`. \
-Please report this to a Chingu administrator.`);
-      console.log(`Sherpabot error: Ask command routing error (command=${command})`);
+    if (command !== "total") {
+      msg.reply(`Error: Routing Error \`(command=${command})\`.`);
+      console.log(`Error: Command Routing error (command=${command})`);
       return;
     }
 
-    msg.reply('https://chingu.docs.chingu.io/about/askhelp');
-  };
+    msg.reply("Here is some data: https://untethered.me/");
+  }
 
   /**
    * Retrieve a string containing help information for the 'ask`
@@ -27,9 +25,17 @@ Please report this to a Chingu administrator.`);
    * @memberof askcmds
    */
   static help(commandPrefix) {
-    return ` __**Sherpa ask Commands:**__ \
-\n\`${commandPrefix}ask\` - Display tips on how to ask for help`;
-  };
-};
+    return ` __**Commands:**__ \
+\n\`${commandPrefix}total\` - Get total inv levels \
+\n\`${commandPrefix}sauce\` - Get total sauce inv levels  \
+\n\`${commandPrefix}diamond\`  - Get total diamond inv levels \
+\n\`${commandPrefix}sativa\`  - Get total sativa in inventory \
+\n\`${commandPrefix}indica\`  - Get total sativa in inventory  \
+\n\`${commandPrefix}hybrid\`  - Get total sativa in inventory \
+\n\`${commandPrefix}c02\`  - Get total c02 in inventory \
+\n\`${commandPrefix}hte\`  - Get total hydrocarbon in inventory \
+      `;
+  }
+}
 
 module.exports = askCommand;

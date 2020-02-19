@@ -12,6 +12,7 @@ Please follow the
 ### Commit Messages
 
 Commit messages should be formatted using the following pattern:
+
 ```
 <type>: <subject>
 
@@ -30,7 +31,7 @@ _Type_ describes the nature of the change and should be one of the following:
 - `refactor`: refactoring production code
 - `test`: adding tests, refactoring test; no production code change
 - `other`: updating build tasks, package manager configs, etc; no production
-code change
+  code change
 
 _Subject_ is a short imperative statement of no more than 50 characters that
 describes the intent of the commit.
@@ -60,23 +61,22 @@ the API and the documentation.
 
 ### Developing
 
-*_TBD_*
+_*TBD*_
 
 #### Git Branches
 
-![Neighborhood Git Workflow](https://github.com/chingu-x/sherpabot/blob/development/docs/Git%20-%20Team%20Workflow.png)
+![Neighborhood Git Workflow](https://github.com/chingu-x/budbot/blob/development/docs/Git%20-%20Team%20Workflow.png)
 
 - `master`: Only updated from PR's from the `development` branch for release.
-This branch always reflects the current production release.
+  This branch always reflects the current production release.
 - `development`: Reflects the candidate code for the next release. Developers
-work in working branches, which are then pulled into this branch. All code
-pulled into this branch must be tested and undergo peer review as part of the
-PR process.
+  work in working branches, which are then pulled into this branch. All code
+  pulled into this branch must be tested and undergo peer review as part of the
+  PR process.
 - `working branches`: Are individual branches created by each developer when
-they are working on changes and bug fixes. There are 4 basic types of branches:
-bug, feature, refactor and style, after the type comes the name, it should
-specify on top of the branch type. For example feature/course-review.
-
+  they are working on changes and bug fixes. There are 4 basic types of branches:
+  bug, feature, refactor and style, after the type comes the name, it should
+  specify on top of the branch type. For example feature/course-review.
 
 Please don't include changes to `dist/` in your pull request. This should only
 be updated when releasing a new version.
@@ -90,4 +90,4 @@ successful.
 
 ### Running Examples
 
-*_TBD_*
+_*TBD*_
